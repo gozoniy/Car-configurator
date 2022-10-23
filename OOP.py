@@ -98,3 +98,4 @@ while x1:
             elif chng==2:
                 stW("saves/cars",cfg1,"")
 #Закадка от Жака Фреско
+#Сколько?
