@@ -9,14 +9,6 @@ class CAR:
     def __init__(self, brand, model):
         self.brand=brand
         self.model=model
-    def write(self, a,b,c,d,e,f,l):
-        self.color=a
-        self.brand=b
-        self.model=c
-        self.engine=d
-        self.transmission=e
-        self.lights=f
-        self.locked=l
     def getInfo(self):
         return(self.color+","+self.brand+","+self.model+","+self.engine+","+self.transmission+","+self.lights+","+self.locked)
         
@@ -68,7 +60,7 @@ while x1:
             C1=CAR(br,mo)
         while x2:
             m=menu(men)[0]
-            if m==5: break
+            if m==6: break
             if m==1: CAR.color=ent('цвет')
             elif m==2: CAR.engine=ent('двигатель')
             elif m==3: CAR.transmission=menu(trns)[1]
