@@ -18,6 +18,8 @@ class CAR:
     def getInfo(self):
         return(self.color+","+self.brand+","+self.model+","+self.engine+","+self.transmission+","+self.lights)
         
+#test comment
+        
 def menu(T): #выбор из файл-меню
     num="t"
     for i in range(len(T)):
