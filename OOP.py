@@ -96,4 +96,5 @@ while x1:
                 CAR.lights=YY[5]
                 ch=1
             elif chng==2:
-                stW("saves/cars",cfg1,"")    
+                stW("saves/cars",cfg1,"")
+#Закадка от Жака Фреско
