@@ -10,7 +10,7 @@ class CAR:
         self.brand=brand
         self.model=model
     def getInfo(self):
-        return(self.color+","+self.brand+","+self.model+","+self.engine+","+self.transmission+","+self.lights+","+self.locked)
+        return(self.color+","+self.brand+","+self.model+","+self.engine+","+self.transmission+","+self.lights)
         
 def menu(T): #выбор из файл-меню
     num="t"
@@ -60,12 +60,11 @@ while x1:
             C1=CAR(br,mo)
         while x2:
             m=menu(men)[0]
-            if m==6: break
+            if m==5: break
             if m==1: CAR.color=ent('цвет')
             elif m==2: CAR.engine=ent('двигатель')
             elif m==3: CAR.transmission=menu(trns)[1]
             elif m==4: CAR.lights=menu(li)[1]
-            elif m==5: CAR.locked=menu(lo)[1]
         cfg=C1.getInfo()
         if ch: stW("saves/cars",cfg1,time.ctime()[4:]+" - "+str(cfg))
         if not ch:
@@ -87,7 +86,6 @@ while x1:
                 CAR.engine=YY[3]
                 CAR.transmission=YY[4]
                 CAR.lights=YY[5]
-                CAR.locked=YY[6]
                 ch=1
             elif chng==2:
                 stW("saves/cars",cfg1,"")
