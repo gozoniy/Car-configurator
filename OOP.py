@@ -4,21 +4,21 @@ men=open("menuO.txt","r",encoding="UTF-8").readlines()
 trns=open("transmissions.txt","r",encoding="UTF-8").readlines()
 li=open("lights.txt","r",encoding="UTF-8").readlines()
 change=open("changes_select.txt","r",encoding="UTF-8").readlines()
+lo=open("lock.txt","r",encoding="UTF-8").readlines()
 class CAR:
     def __init__(self, brand, model):
         self.brand=brand
         self.model=model
-    def write(self, a,b,c,d,e,f):
+    def write(self, a,b,c,d,e,f,l):
         self.color=a
         self.brand=b
         self.model=c
         self.engine=d
         self.transmission=e
         self.lights=f
+        self.locked=l
     def getInfo(self):
-        return(self.color+","+self.brand+","+self.model+","+self.engine+","+self.transmission+","+self.lights)
-        
-#test comment
+        return(self.color+","+self.brand+","+self.model+","+self.engine+","+self.transmission+","+self.lights+","+self.locked)
         
 def menu(T): #выбор из файл-меню
     num="t"
@@ -73,6 +73,7 @@ while x1:
             elif m==2: CAR.engine=ent('двигатель')
             elif m==3: CAR.transmission=menu(trns)[1]
             elif m==4: CAR.lights=menu(li)[1]
+            elif m==5: CAR.locked=menu(lo)[1]
         cfg=C1.getInfo()
         if ch: stW("saves/cars",cfg1,time.ctime()[4:]+" - "+str(cfg))
         if not ch:
@@ -94,8 +95,7 @@ while x1:
                 CAR.engine=YY[3]
                 CAR.transmission=YY[4]
                 CAR.lights=YY[5]
+                CAR.locked=YY[6]
                 ch=1
             elif chng==2:
                 stW("saves/cars",cfg1,"")
-#Закадка от Жака Фреско
-#Сколько?
